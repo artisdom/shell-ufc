@@ -42,6 +42,10 @@ git() {
     then
         git ls-files | grep -i $2
 
+    elif [ "$1" = "sa" ]
+    then
+        grep -r $2
+
     else
         command git $@
     fi
