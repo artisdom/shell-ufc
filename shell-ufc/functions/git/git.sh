@@ -58,9 +58,6 @@ git() {
     then
         git ls-files -v | grep ^h | cut -c 3-
 
-    elif [ "$1" = "sa" ]
-    then
-
     else
         command git $@
     fi
