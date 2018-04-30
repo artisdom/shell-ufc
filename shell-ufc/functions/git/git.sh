@@ -38,13 +38,28 @@ git() {
     then
         git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
-    elif [ "$1" = "f" ]
+    elif [ "$1" = "ff" ]
     then
         git ls-files | grep -i $2
 
     elif [ "$1" = "sa" ]
     then
         grep -r $2
+
+    elif [ "$1" = "assume" ]
+    then
+        git update-index --assume-unchanged $2
+
+    elif [ "$1" = "unassume" ]
+    then
+        git update-index --no-assume-unchanged $2
+
+    elif [ "$1" = "assumed" ]
+    then
+        git ls-files -v | grep ^h | cut -c 3-
+
+    elif [ "$1" = "sa" ]
+    then
 
     else
         command git $@
