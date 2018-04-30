@@ -26,9 +26,17 @@ git() {
     then
         git commit --amend
 
-    elif [ "$1" = "ll" ]
+    elif [ "$1" = "lf" ]
     then
         git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+    elif [ "$1" = "lds" ]
+    then
+        git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+    elif [ "$1" = "ld" ]
+    then
+        git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
     else
         command git $@
