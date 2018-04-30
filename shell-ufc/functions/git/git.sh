@@ -58,6 +58,10 @@ git() {
     then
         git ls-files -v | grep ^h | cut -c 3-
 
+    elif [ "$1" = "logtree" ]
+    then
+        git log --graph --oneline --decorate --all
+
     else
         command git $@
     fi
