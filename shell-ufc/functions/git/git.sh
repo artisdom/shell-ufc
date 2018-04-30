@@ -38,6 +38,10 @@ git() {
     then
         git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
 
+    elif [ "$1" = "f" ]
+    then
+        git ls-files | grep -i $2
+
     else
         command git $@
     fi
