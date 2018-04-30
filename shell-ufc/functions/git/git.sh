@@ -62,6 +62,22 @@ git() {
     then
         git log --graph --oneline --decorate --all
 
+    elif [ "$1" = "s" ]
+    then
+        git status
+
+    elif [ "$1" = "st" ]
+    then
+        git status -s
+
+    elif [ "$1" = "cl" ]
+    then
+        git clone $2
+
+    elif [ "$1" = "ci" ]
+    then
+        git commit $@
+
     else
         command git $@
     fi
