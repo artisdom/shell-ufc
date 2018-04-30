@@ -26,6 +26,10 @@ git() {
     then
         git commit --amend
 
+    elif [ "$1" = "ll" ]
+    then
+        git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
     else
         command git $@
     fi
