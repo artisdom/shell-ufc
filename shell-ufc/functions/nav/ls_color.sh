@@ -1,0 +1,3 @@
+ls() {
+    command ls --color=auto
+}
