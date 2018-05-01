@@ -1,0 +1,9 @@
+qman() {
+    if [ "$1" = "--list" ]; then
+        echo -e "List of pages:\n"
+        echo "    asciitable - A table of ascii character and their hex values and other info."
+
+    elif [ "$1" = "asciitable" ]; then
+        man 7 ascii
+    fi
+}
