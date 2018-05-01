@@ -68,7 +68,7 @@ git() {
 
     elif [ "$1" = "st" ]
     then
-        git status -s $2 $3 $4 $5 $6 $7 $8 $9
+        git status -sb $2 $3 $4 $5 $6 $7 $8 $9
 
     elif [ "$1" = "cl" ]
     then
