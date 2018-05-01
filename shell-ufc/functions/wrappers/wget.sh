@@ -1,0 +1,3 @@
+wget() {
+    command wget -c
+}
