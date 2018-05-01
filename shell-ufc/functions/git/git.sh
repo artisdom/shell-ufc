@@ -90,6 +90,10 @@ git() {
     then
         git diff --word-diff $2 $3 $4 $5 $6 $7 $8 $9
 
+    elif [ "$1" = "cob" ]
+    then
+        git checkout -b $2 $3 $4 $5 $6 $7 $8 $9
+
     else
         command git $@
     fi
