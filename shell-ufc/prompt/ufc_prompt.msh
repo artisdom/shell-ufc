@@ -1,0 +1,24 @@
+ufc_prompt() {
+    if ! [ -d "${HOME}/.config/ufc" ]; then
+        mkdir -p "${HOME}/.config/ufc"
+    fi
+
+    if ! [ -f "${HOME}/.config/ufc/prompt" ]; then
+        echo "# Empty prompt config" > "${HOME}/.config/ufc/prompt"
+    fi
+
+    if [ "$1" = "set" ]; then
+        if [ "$2" = "clean" ]; then
+            echo "# Clean prompt" > "${HOME}/.config/ufc/prompt"
+            echo "" >> "${HOME}/.config/ufc/prompt"
+            echo 'export PS1="%{$fg[cyan]%}${HOST}@${USER} %{$fg[magenta]%}❯%{$reset_color%} "' >> "${HOME}/.config/ufc/prompt"
+            echo 'export RPS1="%{$fg[cyan]%}%~%{$reset_color%}"' >> "${HOME}/.config/ufc/prompt"
+        else
+            echo "Invalid prompt"
+        fi
+    fi
+
+    if [ "$1" = "off" ]; then
+        echo "# Empty prompt config" > "${HOME}/.config/ufc/prompt"
+    fi
+}

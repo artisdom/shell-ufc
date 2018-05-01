@@ -8,6 +8,6 @@ else
         rm build/ufc.sh
     fi
     for file in $(find | grep .msh); do
-        grep -o '^[^#]*' $file | awk 'NF' >> build/ufc.sh
+        cat $file | awk 'NF' >> build/ufc.sh
     done
 fi
