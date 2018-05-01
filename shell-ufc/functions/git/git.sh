@@ -115,6 +115,10 @@ git() {
         git add -p .
         git commit -m $2 $3 $4 $5 $6 $7 $8 $9
 
+    elif [ "$1" = "rank" ]
+    then
+        git shortlog -sn --no-merges
+
     else
         command git $@
     fi
