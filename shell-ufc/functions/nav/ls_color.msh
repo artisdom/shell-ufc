@@ -1,3 +1,1 @@
-ls() {
-    command ls --color=auto
-}
+ls() { command ls --color=auto; }
