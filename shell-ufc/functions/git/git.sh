@@ -94,6 +94,27 @@ git() {
     then
         git checkout -b $2 $3 $4 $5 $6 $7 $8 $9
 
+    elif [ "$1" = "a" ]
+    then
+        git add $2 $3 $4 $5 $6 $7 $8 $9
+
+    elif [ "$1" = "aa" ]
+    then
+        git add .
+
+    elif [ "$1" = "ap" ]
+    then
+        git add -p $2 $3 $4 $5 $6 $7 $8 $9
+
+    elif [ "$1" = "aap" ]
+    then
+        git add -p .
+
+    elif [ "$1" = "acp" ]
+    then
+        git add -p .
+        git commit -m $2 $3 $4 $5 $6 $7 $8 $9
+
     else
         command git $@
     fi
